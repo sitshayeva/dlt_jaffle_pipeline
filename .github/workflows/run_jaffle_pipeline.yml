@@ -1,12 +1,10 @@
-name: Run Jaffle Shop DLT Pipeline
+name: Run Jaffle Shop DLT Pipeline Daily
 
-# ✅ TRIGGERS: Schedule daily + manual runs
+# ✅ Trigger: Run every day at 00:00 UTC
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs at 00:00 UTC every day
-  workflow_dispatch:     # Allows manual run from GitHub UI
+    - cron: "0 0 * * *"
 
-# ✅ MAIN JOB
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
@@ -23,5 +21,5 @@ jobs:
       - name: 📦 Install dependencies
         run: pip install -r requirements.txt
 
-      - name: ▶️ Run DLT pipeline
+      - name: ▶️ Run the pipeline
         run: python pipeline.py
