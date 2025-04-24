@@ -98,7 +98,7 @@ SELECT * FROM jaffle_data.orders LIMIT 10;
 
 | Cron           | Trigger Time         |
 |----------------|----------------------|
-| `*/30 * * * *` | Every 30 minutes     |
+| `"0 0 * * *"` | Daily    |
 
 You can monitor the job via:  
 [**GitHub Actions → Workflows**](./.github/workflows/run_jaffle_pipeline.yml)
